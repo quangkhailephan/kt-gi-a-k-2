@@ -1,0 +1,88 @@
+gói  ThiGiuaKy ;
+
+nhập  java.text.ParseException ;
+nhập  java.text.SimpleDateFormat ;
+nhập  java.util.Date ;
+nhập  java.util.Scanner ;
+
+public  abstract  class  HoaDon {
+     int maHD riêng tư ;
+    private  Date ngayHD;
+    private  String tenKh;
+     int maPhong ;
+     đôi donGia tư nhân ;
+
+    Máy quét sc =  Máy quét mới  ( Hệ thống . In);
+    Máy quét scs =  Máy quét mới  ( Hệ thống . In );
+    
+    SimpleDateFormat ngayVN =  new  SimpleDateFormat ( " dd / MM / yyyy " );
+    
+    bảo vệ  HoaDon () {
+    }
+
+    protected  HoaDon ( int  maHD , Date  ngayHD , String  tenKh , int  maPhong , double  donGia ) {
+        cái này . maHD = maHD;
+        cái này . ngayHD = ngayHD;
+        cái này . tenKh = tenKh;
+        cái này . maPhong = maPhong;
+        cái này . donGia = donGia;
+    }
+
+    bảo vệ  int  getMaHD () {
+        trả về maHD;
+    }
+
+     void  setMaHD được bảo vệ ( int  maHD ) {
+        cái này . maHD = maHD;
+    }
+
+     Ngày  được bảo vệ getNgayHD () {
+        trả về ngayHD;
+    }
+
+    được bảo vệ  void  setNgayHD ( Ngày  ngayHD ) {
+        cái này . ngayHD = ngayHD;
+    }
+
+     String  được bảo vệ getTenKh () {
+        trả về tenKh;
+    }
+
+     void  setTenKh được bảo vệ ( Chuỗi  tenKh ) {
+        cái này . tenKh = tenKh;
+    }
+
+    được bảo vệ  int  getMaPhong () {
+        return maPhong;
+    }
+
+     void  setMaPhong được bảo vệ ( int  maPhong ) {
+        cái này . maPhong = maPhong;
+    }
+
+    được bảo vệ  kép  getDonGia () {
+        trả lại donGia;
+    }
+
+     void  setDonGia được bảo vệ ( double  donGia ) {
+        cái này . donGia = donGia;
+    }
+
+    bảo vệ  void  input () ném  ParseException {
+        Hệ thống . ra ngoài . print ( " - Nhập vào bảng mã: " );
+        cái này . maHD = scs . nextInt ();
+        Hệ thống . ra ngoài . print ( " - Import into Billing date: " );
+        cái này . ngayHD = ngayVN . phân tích cú pháp (sc . nextLine ());
+        Hệ thống . ra ngoài . print ( " - Nhập vào khách hàng tên: " );
+        cái này . tenKh = sc . hàng tiếp theo();
+        Hệ thống . ra ngoài . print ( " - Nhập vào phòng mã: " );
+        cái này . maPhong = scs . nextInt ();
+        Hệ thống . ra ngoài . print ( " - Nhập vào đơn giá: " );
+        cái này . donGia = scs . nextDouble ();
+    }
+
+    public  String  toString () {
+        String str =  Chuỗi . format ( " % -20d% -20s% -20s% -20d% -20.2f " , maHD, ngayVN . format (ngayHD), tenKh, maPhong, donGia);
+        trả về str;
+    }
+}
